@@ -1,0 +1,58 @@
+<!doctype html>
+<html translate="no">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- bootstrap -->
+        <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+        <!-- main styles -->
+        <link rel="stylesheet" href="./assets/css/main.css">
+        <link rel="stylesheet" href="./assets/css/scoreboard.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+        <link rel="preload" href="./assets/img/defend.png" as="image">
+        <link rel="preload" href="./assets/img/defend.png" as="image">
+
+    </head>
+    <body>
+        <div id="main_container">
+                <div class="text-center" id="score_container">
+                <!-- Start Left Team -->
+                <div class="team_card animate__animated animate__fadeInLeft" id="blue_team">
+					<div class="team_image" data-team="blue_team"></div>
+					<div class="team_name" id="blue_team_name" data-team="blue_team">
+						<h1 class="team_name" data-team="blue_team">east tennessee state</h1>
+					</div>
+					<div class="team_score" id="blue_team_score" data-team="blue_team">
+                        <h1 class="team_score" data-team="blue_team">3</h1>
+					</div>
+                    <div class="team_attack_defend" id="blue_team_ad" data-team="blue_team" data-mode=""></div>
+                </div>
+                <!-- End Left Team -->
+                <!-- Start Game Text -->
+                <!--
+                <div id="game_text">
+                </div>
+                -->
+                <!-- End Game Text -->
+                <!-- Start Right Team -->
+                <div class="team_card animate__animated animate__fadeInRight" id="red_team">
+					<div class="team_image" data-team="red_team"></div>
+					<div class="team_name" id="red_team_name" data-team="red_team">
+						<h1 class="team_name" data-team="red_team">east tennessee state</h1>
+					</div>
+					<div class="team_score" id="red_team_score" data-team="red_team">
+                        <h1 class="team_score" data-team="red_team">1</h1>
+					</div>
+                    <div class="team_attack_defend" id="red_team_ad" data-team="red_team" data-mode=""></div>
+                </div>
+                <!-- End Right Team -->
+            </div>
+        </div>
+        <!-- Bootstrap JS -->
+        <script src="./assets/js/bootstrap.bundle.min.js"></script>
+        <!-- jQuery Dependency -->
+        <script src="./assets/js/jquery-3.6.0.min.js"></script>
+        <!-- Main Script -->
+        <script src="./assets/js/main.js"></script>
+    </body>
+</html>

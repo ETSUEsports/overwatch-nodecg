@@ -1,0 +1,26 @@
+:root {
+    --etsu-primary-navy: #041E42;
+    --etsu-primary-gold: #FFC72C;
+    --ow-primary-blue: #328DB3;
+    --ow-primary-red: #A00815;
+    font-variant-numeric: tabular-nums;
+}
+@font-face {
+    font-family: Fyrste;
+    src: url("../fonts/fyrste.ttf") format("truetype");
+}
+.white_text{
+    color: #ffffff !important;
+}
+.black_text{
+    color: #000000 !important;
+}
+#main_container{
+    width: 1920px;
+    height: 1080px;
+    position: relative;
+}
+.scoreboard_active{
+    /*background-image: url("../img/OW_Sketch.png");*/
+    background-repeat: no-repeat;
+}

@@ -1,0 +1,122 @@
+/* General CSS */
+#score_container{
+    width: 1920px;
+    height: 123px;
+    font-family: Fyrste;
+}
+.scoreboard_hidden{
+    visibility: hidden !important;
+}
+/* Middle Text */
+#game_text{
+    width: 420px;
+    height: 55px;
+    background-color: rgba(33,48,67,0.8);
+    position: absolute;
+    left: 750px;
+    color: #ffffff;
+}
+/* Team Cards */
+#blue_team.team_card{
+    width: 710px;
+    height: 45px;
+    top: 12px;
+    background-color: var(--ow-primary-blue);
+    position: absolute;
+    color: #ffffff;
+    clip-path: polygon(0 0, 98.7% 0, 97% 100%, 0% 100%);
+    transition: all 0.5s linear;
+}
+#red_team.team_card{
+    width: 710px;
+    height: 45px;
+    top: 12px;
+    background-color: var(--ow-primary-red);
+    position: absolute;
+    left: 1210px;
+    color: #ffffff;
+    clip-path: polygon(1.3% 0, 100% 0, 100% 100%, 3% 100%);
+}
+/* Team Images */
+.team_image[data-team="blue_team"] {
+    width: 175px;
+    height: 45px;
+    background-color: var(--etsu-primary-navy);
+    background-size: cover;
+    position: absolute;
+    color: #ffffff;
+}
+.team_image[data-team="red_team"] {
+    width: 175px;
+    height: 45px;
+    background-color: var(--etsu-primary-gold);
+    background-size: cover;
+    position: absolute;
+    color: #ffffff;
+    left: 536px;
+}
+/* Team Names */
+.team_name{
+    line-height: 45px;
+}
+.team_score{
+    line-height: 45px;
+}
+h1.team_name[data-team="blue_team"] {
+    position: absolute;
+    left: 220px;
+    text-align: right !important;
+}
+h1.team_name[data-team="red_team"] {
+    position: absolute;
+    right: 220px;
+    text-align: left !important;
+}
+h1.team_score[data-team="blue_team"] {
+    position: absolute;
+    right: 100px;
+    transition: all 0.5s linear;
+}
+h1.team_score[data-team="blue_team"][data-mode="hidden"] {
+    position: absolute;
+    right: 48px !important;
+    transition: all 0.5s linear;
+}
+h1.team_score[data-team="red_team"] {
+    position: absolute;
+    left: 100px;
+    text-align: right !important;
+    transition: all 0.5s linear;
+}
+h1.team_score[data-team="red_team"][data-mode="hidden"] {
+    position: absolute;
+    left: 48px !important;
+    text-align: right !important;
+    transition: all 0.5s linear;
+}
+/* Team Attack or Defend */
+/* Team Images */
+.team_attack_defend[data-team="blue_team"] {
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    left: 640px;
+}
+.team_attack_defend[data-team="red_team"] {
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    right: 640px;
+}
+.team_attack_defend[data-mode="attack"]{
+    background-image: url(../img/attack.png) !important;
+    background-repeat: no-repeat;
+    background-size: 35px 35px;
+    background-position: center;
+}
+.team_attack_defend[data-mode="defend"]{
+    background-image: url(../img/defend.png) !important;
+    background-repeat: no-repeat;
+    background-size: 35px 35px;
+    background-position: center;
+}

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<style>
+		.team {
+			padding: 5px;
+			margin-top: 10px;
+		}
+		b{
+			font-size: 20px;
+		}
+		input{
+			color: #ffffff;
+		}
+		.big_label{
+			font-size: 15px;
+			color: #ffffff;
+		}
+		.yellow{
+			color: #000000;
+		}
+		.buttons{
+			margin-right: 5px;
+		}
+		.select-dropdown{
+			background-color: #232C3D;
+		}
+		.select-dropdown li.disabled>span{
+			color: #7f7f7f !important;
+		}
+		.select-dropdown li>span{
+			color: #ffffff !important;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col s6 team">
+				<b>Blue Team</b>
+				<div class="input-field">
+					<input id="blue_team_name" type="text" class="validate">
+					<label for="blue_team_name">Team Name</label>
+				</div>
+				<div class="input-field">
+					<input id="blue_team_score" type="number" min="0" max="3" class="validate">
+					<label for="blue_team_score">Score</label>
+				</div>
+				<div class="input-field">
+					<select id="blue_team_logo">
+					</select>
+					<label for="blue_team_logo">Logo</label>
+					<img id="blue_team_logo_preview" class="responsive-img">
+				</div>
+			</div>
+			<div class="col s6 team">
+				<b>Red Team</b>
+				<div class="input-field">
+					<input id="red_team_name" type="text" class="validate">
+					<label for="red_team_name">Team Name</label>
+				</div>
+				<div class="input-field">
+					<input id="red_team_score" type="number" min="0" max="3" class="validate">
+					<label for="red_team_score">Score</label>
+				</div>
+				<div class="input-field">
+					<select id="red_team_logo">
+					</select>
+					<label for="red_team_logo">Logo</label>
+					<img id="red_team_logo_preview" class="responsive-img">
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="row">
+				<div class="switch">
+					<label class="big_label" for="ad_mode">A/D mode</label>
+					<label><input id="ad_mode" type="checkbox"><span class="lever"></span></label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="switch">
+					<label class="big_label">Blue Attacks<input id="attacking_team" type="checkbox"><span class="lever"></span>Red Attacks</label>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<button id="update_button" class="btn waves-effect hoverable waves-light buttons" onclick="update()">Update</button>
+			<button id="hide_button" class="btn waves-effect hoverable waves-light red buttons" onclick="hide()">Hide</button>
+			<button class="btn waves-effect hoverable waves-light yellow buttons" onclick="swapSides()">Swap Sides</button>
+		</div>
+		<div class="row">
+			<button class="btn waves-effect waves-light red" onclick="resetStats()"><i class="material-icons left">delete</i>Reset Everything</button>
+		</div>
+	</div>
+	<script src="jquery-3.6.0.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+	<script src="ow-home.js"></script>
+</body>
+</html>
