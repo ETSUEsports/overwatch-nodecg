@@ -71,14 +71,17 @@ function deleteTeam(name){
         if(value.blue_team == name || value.red_team == name){
             alert("You cannot delete an active team!");
         }else{
-            $.ajax({
-                type: "DELETE",
-                url: `/etsu-ow/teams/${name}`,
-                success: function(data){
-                    alert(data);
-                    getTeams();
-                }
-            });
+            let text = `Are you sure you want to delete the team: ${name}?`;
+            if (confirm(text) == true) {
+                $.ajax({
+                    type: "DELETE",
+                    url: `/etsu-ow/teams/${name}`,
+                    success: function(data){
+                        alert(data);
+                        getTeams();
+                    }
+                });
+            }
         }
     });
 }
