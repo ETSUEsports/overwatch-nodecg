@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<style>
+        :root {
+            --etsu-primary-navy: #041E42;
+            --etsu-primary-gold: #FFC72C;
+            --ow-primary-blue: #28BBDF;
+            --ow-primary-red: #DA2623;
+            font-variant-numeric: tabular-nums;
+        }
+		.team {
+			padding: 5px;
+			margin-top: 10px;
+		}
+		b{
+			font-size: 20px;
+		}
+		input{
+			color: #ffffff;
+		}
+		.big_label{
+			font-size: 15px;
+			color: #ffffff;
+		}
+		.yellow{
+			color: #000000;
+		}
+		.buttons{
+			margin-right: 5px;
+		}
+		.select-dropdown{
+			background-color: #232C3D;
+		}
+		.select-dropdown li.disabled>span{
+			color: #7f7f7f !important;
+		}
+		.select-dropdown li>span{
+			color: #ffffff !important;
+		}
+        .card-content{
+            padding-top: 0px !important;
+            color: #ffffff;
+        }
+        .card.small{
+            height: 135px;
+            width: 200px;
+            background-color: #232C3D;
+        }
+        .card-action, .card-image{
+            background-color: #232C3D !important;
+        }   
+        .team-blue{
+            background-color: var(--ow-primary-blue) !important;
+            color: #000000;
+        }
+        .team-red{
+            background-color: var(--ow-primary-red) !important;
+        }
+        .active-blue{
+            background-color: var(--ow-primary-blue) !important;
+            color: #000000;
+            height: 90px !important;
+        }
+        .active-red{
+            background-color: var(--ow-primary-red) !important;
+            height: 90px !important;
+        }
+        .cards-container {
+            column-break-inside: avoid;
+        }
+        .cards-container .card {
+            display: inline-block;
+            overflow: visible;
+        }
+        .cards-container {
+            -webkit-column-count: 3;
+            -moz-column-count: 3;
+            column-count: 3;
+        }
+        #active_blue_team > div.card-content > p {
+            color: #000000;
+        }
+	</style>
+</head>
+<body>
+	<div>
+        <div class="row">
+              <form id="new_team" enctype="multipart/form-data">
+                <div class="input-field col s12">
+                    <input id="name" name="name" type="text" class="validate">
+                    <label for="name">Team Name</label>
+                </div>
+                <div class="input-field col s12">
+                    <div class="file-field input-field">
+                        <div class="btn">
+                            <span>Logo</span>
+                            <input id="logo" name="file" type="file">
+                        </div>
+                        <div class="file-path-wrapper">
+                            <input class="file-path validate" name="logo" type="text">
+                        </div>
+                    </div>
+                </div>
+                <div class="input-field col s12">
+                    <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                        <i class="material-icons right">send</i>
+                    </button>
+                </div>
+            </form>
+        </div>
+	</div>
+	<script src="jquery-3.6.0.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+	<script>
+        $('#logo').change(function() {
+            var filename = $('input[type=file]').val().split('\\').pop();
+            console.log(filename,$('#file'));
+            var teamNameFromFile = filename.substr(0, filename.lastIndexOf('.'));
+            $('#name').val(teamNameFromFile);
+            M.updateTextFields();
+        });
+        $("#new_team").submit(function(e) {
+            e.preventDefault(); // avoid to execute the actual submit of the form.
+            var form = $(this);
+            var fd = new FormData();    
+            fd.append( 'file', $('#logo').prop('files')[0] );
+            $.ajax({
+                type: "PUT",
+                url: '/etsu-ow/team',
+                data: form.serialize(), // serializes the form's elements.
+                success: function(data){
+                    $.ajax({
+                        type: "POST",
+                        url: '/etsu-ow/team/logo',
+                        data: fd,
+                        processData: false,
+                        contentType: false,
+                        success: function(data){
+                            alert(data);
+                    }
+                    });
+                }
+            });
+
+        });
+    </script>
+</body>
+</html>

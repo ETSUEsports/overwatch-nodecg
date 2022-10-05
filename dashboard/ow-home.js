@@ -1,12 +1,12 @@
 const blue_team = nodecg.Replicant('blue_team', {defaultValue: {
-    "name": "Left Team",
+    "name": "TEAM 1",
     "score": 0,
-    "logo_path": "/assets/etsu-ow/team_logos/!DEFAULT_GRAPHIC.png",
+    "logo_file_name": "NO_ACTIVE_TEAM.png"
 }});
 const red_team = nodecg.Replicant('red_team', {defaultValue: {
-    "name": "Left Team",
+    "name": "TEAM 2",
     "score": 0,
-    "logo_path": "/assets/etsu-ow/team_logos/!DEFAULT_GRAPHIC.png",
+    "logo_file_name": "NO_ACTIVE_TEAM.png"
 }});
 const game_info = nodecg.Replicant('game_info', {defaultValue: {
     "current": 1,
@@ -14,6 +14,8 @@ const game_info = nodecg.Replicant('game_info', {defaultValue: {
     "ad_mode": true,
     "attacking_team": "blue",
     "overlay_visible": true,
+    "blue_team": "NO_ACTIVE_TEAM",
+    "red_team": "NO_ACTIVE_TEAM"
 }});
 const logos = nodecg.Replicant('assets:team_logos');
 function resetStats(){
@@ -21,21 +23,23 @@ function resetStats(){
     let text = "Are you sure you want to reset game stats?";
     if (confirm(text) == true) {
         blue_team.value = {
-            "name": "Blue Team",
+            "name": "TEAM 1",
             "score": 0,
-            "logo_path": "/assets/etsu-ow/team_logos/!DEFAULT_GRAPHIC.png",
+            "logo_file_name": "NO_ACTIVE_TEAM.png",
         };
         red_team.value = {
-            "name": "Red Team",
+            "name": "TEAM 2",
             "score": 0,
-            "logo_path": "/assets/etsu-ow/team_logos/!DEFAULT_GRAPHIC.png",
+            "logo_file_name": "NO_ACTIVE_TEAM.png",
         };
         game_info.value = {
             "current": 1,
             "maximum": 3,
             "ad_mode": true,
             "attacking_team": "blue",
-            "overlay_visible": visible
+            "overlay_visible": visible,
+            "blue_team": "NO_ACTIVE_TEAM",
+            "red_team": "NO_ACTIVE_TEAM"
         };
         M.updateTextFields();
     }
@@ -45,12 +49,12 @@ function update() {
         blue_team.value = {
             "name": $("#blue_team_name").val(),
             "score": $("#blue_team_score").val(),
-            "logo_path": $("#blue_team_logo").val(),
+            "logo_file_name": $("#blue_team_logo").val(),
         };
         red_team.value = {
             "name": $("#red_team_name").val(),
             "score": $("#red_team_score").val(),
-            "logo_path": $("#red_team_logo").val(),
+            "logo_file_name": $("#red_team_logo").val(),
         };
         let attacking_team = $("#attacking_team").prop('checked');
         if(attacking_team){
@@ -73,6 +77,8 @@ function update() {
     }
 }
 function swapSides(){
+    const old_blue = game_info.value.blue_team;
+    const old_red = game_info.value.red_team;
     nodecg.readReplicant('blue_team', value => {
         red_team.value = value;
     });
@@ -89,6 +95,8 @@ function swapSides(){
         $("#red_team_score").val(value.score);
         M.updateTextFields();
     });
+    game_info.value.blue_team = old_red;
+    game_info.value.red_team = old_blue;
 }
 function hide() {
     game_info.value.overlay_visible = false;
@@ -111,11 +119,11 @@ nodecg.readReplicant('assets:team_logos', value => {
     value.sort((a, b) => a.base.localeCompare(b.base))
     $.each(value, function (i, item) {
         $('#blue_team_logo').append($('<option>', { 
-            value: item.url,
+            value: item.base,
             text : item.base 
         }));
         $('#red_team_logo').append($('<option>', { 
-            value: item.url,
+            value: item.base,
             text : item.base 
         }));
     });
@@ -136,21 +144,21 @@ nodecg.readReplicant('game_info', value => {
     M.updateTextFields();
 });
 $('#blue_team_logo').on('change', function() {
-    $('#blue_team_logo_preview').attr('src', this.value);
+    $('#blue_team_logo_preview').attr('src', `/assets/overwatch-nodecg/team_logos/${this.value}`);
 });
 $('#red_team_logo').on('change', function() {
-    $('#red_team_logo_preview').attr('src', this.value);
+    $('#red_team_logo_preview').attr('src', `/assets/overwatch-nodecg/team_logos/${this.value}`);
 });
 
 blue_team.on('change', (newVal) => {
     $("#blue_team_name").val(newVal.name);
     $("#blue_team_score").val(newVal.score);
-    $('#blue_team_logo_preview').attr('src', newVal.logo_path);
+    $('#blue_team_logo_preview').attr('src', `/assets/overwatch-nodecg/team_logos/${newVal.logo_file_name}`);
 })
 red_team.on('change', (newVal) => {
     $("#red_team_name").val(newVal.name);
     $("#red_team_score").val(newVal.score);
-    $('#red_team_logo_preview').attr('src', newVal.logo_path);
+    $('#red_team_logo_preview').attr('src', `/assets/overwatch-nodecg/team_logos/${newVal.logo_file_name}`);
 })
 game_info.on('change', (newVal) => {
     if(newVal.attacking_team == "blue"){

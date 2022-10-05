@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<style>
+        :root {
+            --etsu-primary-navy: #041E42;
+            --etsu-primary-gold: #FFC72C;
+            --ow-primary-blue: #28BBDF;
+            --ow-primary-red: #DA2623;
+            font-variant-numeric: tabular-nums;
+        }
+		.team {
+			padding: 5px;
+			margin-top: 10px;
+		}
+		b{
+			font-size: 20px;
+		}
+		input{
+			color: #ffffff;
+		}
+		.big_label{
+			font-size: 15px;
+			color: #ffffff;
+		}
+		.yellow{
+			color: #000000;
+		}
+		.buttons{
+			margin-right: 5px;
+		}
+		.select-dropdown{
+			background-color: #232C3D;
+		}
+		.select-dropdown li.disabled>span{
+			color: #7f7f7f !important;
+		}
+		.select-dropdown li>span{
+			color: #ffffff !important;
+		}
+        .card-content{
+            padding-top: 0px !important;
+            color: #ffffff;
+        }
+        .card.small{
+            height: 135px;
+            width: 200px;
+            background-color: #232C3D;
+        }
+        .card-action, .card-image{
+            background-color: #232C3D !important;
+        }
+        .team-blue{
+            background-color: var(--ow-primary-blue) !important;
+            color: #000000;
+        }
+        .team-red{
+            background-color: var(--ow-primary-red) !important;
+        }
+        .active-blue{
+            background-color: var(--ow-primary-blue) !important;
+            color: #000000;
+            height: 90px !important;
+        }
+        .active-red{
+            background-color: var(--ow-primary-red) !important;
+            height: 90px !important;
+        }
+        .cards-container {
+            column-break-inside: avoid;
+        }
+        .cards-container .card {
+            display: inline-block;
+            overflow: visible;
+        }
+        .cards-container {
+            -webkit-column-count: 3;
+            -moz-column-count: 3;
+            column-count: 3;
+        }
+        #active_blue_team > div.card-content > p {
+            color: #000000;
+        }
+        .btn,.btn-large,.btn-small,.btn-flat {
+            padding: 0 5px !important;
+        }
+	</style>
+</head>
+<body>
+	<div class="container">
+        <div class="row text-center">
+			<div class="col s6 team">
+                <h4>Blue Team</h4>
+                <div id="active_blue_team">
+
+                </div>
+			</div>
+			<div class="col s6 team">
+                <h4>Red Team</h4>
+                <div id="active_red_team">
+
+                </div>
+			</div>
+        <div>
+            <h5>Team Library</h5>
+        <div class="row text-center">
+            <div id="team_cards" class="col s12 cards-container"></div>
+        <div>
+        <div class="row">
+            <button class="btn waves-effect waves-light" id="add_team_btn" nodecg-dialog="new-team" name="action">Add Team<i class="material-icons right">add</i></button>
+        </div>
+	</div>
+	<script src="jquery-3.6.0.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+	<script src="ow-teams.js"></script>
+</body>
+</html>

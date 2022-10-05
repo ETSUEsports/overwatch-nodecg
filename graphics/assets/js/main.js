@@ -5,12 +5,12 @@ $(() => {
     blue_team.on('change', (newVal) => {
         $("h1.team_name[data-team='blue_team']").text(newVal.name.toLowerCase());
         $("h1.team_score[data-team='blue_team']").text(newVal.score);
-        $(".team_image[data-team='blue_team']").css('background-image', `url(${newVal.logo_path})`);
+        $(".team_image[data-team='blue_team']").css('background-image', `url(/assets/overwatch-nodecg/team_logos/${newVal.logo_file_name})`);
     })
     red_team.on('change', (newVal) => {
         $("h1.team_name[data-team='red_team']").text(newVal.name.toLowerCase());
         $("h1.team_score[data-team='red_team']").text(newVal.score);
-        $(".team_image[data-team='red_team']").css('background-image', `url(${newVal.logo_path})`);
+        $(".team_image[data-team='red_team']").css('background-image', `url(/assets/overwatch-nodecg/team_logos/${newVal.logo_file_name})`);
     })
     game_info.on('change', (newVal) => {
         if(newVal.overlay_visible){

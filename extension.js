@@ -1,4 +1,18 @@
 'use strict';
+const sqlite3 = require('sqlite3');
+const db = new sqlite3.Database('./bundles/overwatch-nodecg/overwatch.sqlite');
+const multer = require('multer');
+const storage = multer.diskStorage({
+	destination: function (req, file, cb) {
+	  cb(null, './assets/overwatch-nodecg/team_logos')
+	},
+	filename: function (req, file, cb) {
+	  cb(null, file.originalname)
+	}
+})
+const fs = require('fs');
+
+const upload = multer({ storage: storage });
 
 module.exports = function (nodecg) {
 	const router = nodecg.Router();
@@ -94,5 +108,43 @@ module.exports = function (nodecg) {
 			next(err);
 		}
     });
+	router.get('/teams', (req, res) => {
+		db.all("SELECT logo, name FROM teams", (error, rows) => {
+			res.send(rows);
+		});
+	})
+	router.get('/teams/:name', (req, res) => {
+		db.all("SELECT logo, name FROM teams WHERE name = ?", [req.params.name], (error, rows) => {
+			res.send(rows[0]);
+		});
+	})
+	router.put('/team', (req, res) => {
+		db.all("INSERT INTO teams (logo, name) VALUES (?, ?)", [req.body.logo, req.body.name], (error, rows) => {
+			if (error) {
+				res.status(500);
+				res.send(error.message);
+				return console.log(error.message);
+			}
+			res.send('Added Team');
+		});
+	})
+	router.post('/team/logo',upload.any(), (req, res) => {
+		res.send('Uploaded Logo');
+	})
+	router.delete('/teams/:name', (req, res) => {
+		db.all("DELETE FROM teams WHERE name = ?", [req.params.name], (error, rows) => {
+			if (error) {
+				res.status(500);
+				res.send(error.message);
+				return console.log(error.message);
+			}
+			try {
+				fs.unlinkSync(`./assets/overwatch-nodecg/team_logos/${req.params.name}`);
+			  } catch(err) {
+				console.error(err)
+			  }
+			res.send('Deleted Team');
+		});
+	})
     nodecg.mount('/etsu-ow', router);
 };

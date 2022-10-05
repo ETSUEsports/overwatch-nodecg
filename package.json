@@ -28,6 +28,31 @@
         "file": "ow-home.html",
         "headerColor": "#525F78",
         "workspace": "Overwatch"
+      },
+      {
+        "name": "Overwatch Teams",
+        "title": "Overwatch Teams",
+        "width": 6,
+        "file": "ow-teams.html",
+        "headerColor": "#525F78",
+        "workspace": "Overwatch"
+      },
+      {
+        "name": "new-team",
+        "title": "New Team",
+        "width": 3,
+        "dialog": true,
+        "dialogButtons": [
+          {
+            "name": "save",
+            "type": "confirm"
+          },
+          {
+            "name": "cancel",
+            "type": "dismiss"
+          }
+        ],
+        "file": "ow-new-team.html"
       }
     ],
     "graphics": [
@@ -40,11 +65,19 @@
     "assetCategories": [
       {
         "name": "team_logos",
-        "title": "Team Logos (175px x 45px) Do NOT align to right or left as they can be shown on either side",
-        "allowedTypes": ["jpg", "jpeg", "gif", "png"]
+        "title": "Team Logos (1750px x 450px) Do NOT align to right or left as they can be shown on either side",
+        "allowedTypes": [
+          "jpg",
+          "jpeg",
+          "gif",
+          "png"
+        ]
       }
     ]
   },
   "repository": "https://github.com/nodecg/nodecg.git",
-  "license": "Apache-2.0"
+  "license": "Apache-2.0",
+  "dependencies": {
+    "multer": "^1.4.5-lts.1"
+  }
 }
