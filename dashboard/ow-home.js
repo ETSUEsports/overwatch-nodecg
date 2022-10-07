@@ -15,7 +15,16 @@ const game_info = nodecg.Replicant('game_info', {defaultValue: {
     "attacking_team": "blue",
     "overlay_visible": true,
     "blue_team": "NO_ACTIVE_TEAM",
-    "red_team": "NO_ACTIVE_TEAM"
+    "red_team": "NO_ACTIVE_TEAM",
+    "current_game": 0,
+    "active_map": "tbd",
+    "games": [
+        {"id": 0, "map": "tbd", "map_image": null, "mode": "control", "status": "tbd", "blue_team": "tbd", "red_team": "tbd", "blue_score": 0, "red_score": 0},
+        {"id": 1, "map": "tbd", "map_image": null, "mode": "hybrid", "status": "tbd", "blue_team": "tbd", "red_team": "tbd", "blue_score": 0, "red_score": 0},
+        {"id": 2, "map": "tbd", "map_image": null, "mode": "escort", "status": "tbd", "blue_team": "tbd", "red_team": "tbd", "blue_score": 0, "red_score": 0},
+        {"id": 3, "map": "tbd", "map_image": null, "mode": "push", "status": "tbd", "blue_team": "tbd", "red_team": "tbd", "blue_score": 0, "red_score": 0},
+        {"id": 4, "map": "tbd", "map_image": null, "mode": "control", "status": "tbd", "blue_team": "tbd", "red_team": "tbd", "blue_score": 0, "red_score": 0},
+    ]
 }});
 const logos = nodecg.Replicant('assets:team_logos');
 function resetStats(){
@@ -39,7 +48,16 @@ function resetStats(){
             "attacking_team": "blue",
             "overlay_visible": visible,
             "blue_team": "NO_ACTIVE_TEAM",
-            "red_team": "NO_ACTIVE_TEAM"
+            "red_team": "NO_ACTIVE_TEAM",
+            "current_game": 0,
+            "active_map": "tbd",
+            "games": [
+                {"id": 0, "map_id": null, "map": "tbd", "map_image": null, "mode": "control", "status": "tbd", "blue_team": "tbd", "red_team": "tbd", "blue_score": 0, "red_score": 0},
+                {"id": 1, "map_id": null, "map": "tbd", "map_image": null, "mode": "hybrid", "status": "tbd", "blue_team": "tbd", "red_team": "tbd", "blue_score": 0, "red_score": 0},
+                {"id": 2, "map_id": null, "map": "tbd", "map_image": null, "mode": "escort", "status": "tbd", "blue_team": "tbd", "red_team": "tbd", "blue_score": 0, "red_score": 0},
+                {"id": 3, "map_id": null, "map": "tbd", "map_image": null, "mode": "push", "status": "tbd", "blue_team": "tbd", "red_team": "tbd", "blue_score": 0, "red_score": 0},
+                {"id": 4, "map_id": null, "map": "tbd", "map_image": null, "mode": "control", "status": "tbd", "blue_team": "tbd", "red_team": "tbd", "blue_score": 0, "red_score": 0},
+            ]
         };
         M.updateTextFields();
     }

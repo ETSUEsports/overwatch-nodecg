@@ -3,75 +3,80 @@
     height: 791px;
 }
 
+@font-face {
+    font-family: BuzzCity;
+    src: url(../fonts/NBA_Hornets_Buzz_City.ttf);
+}
+
 #bg_image{
     position: relative;
     z-index: 50;
 }
 
-#map_1_container{
+#map_0_container{
     position: absolute;
     top: 216px;
     left: 114px;
     z-index: 1;
 }
 
-#map_2_container{
+#map_1_container{
     position: absolute;
     top: 216px;
     left: 454px;
     z-index: 1;
 }
 
-#map_3_container{
+#map_2_container{
     position: absolute;
     top: 216px;
     left: 794px;
     z-index: 1;
 }
 
-#map_4_container{
+#map_3_container{
     position: absolute;
     top: 216px;
     left: 1134px;
     z-index: 1;
 }
 
-#map_5_container{
+#map_4_container{
     position: absolute;
     top: 216px;
     left: 1474px;
     z-index: 1;
 }
 
-#map_1_text_container{
+#map_0_text_container{
     position: absolute;
     top: 955px;
     left: 205px;
     z-index: 100;
 }
 
-#map_2_text_container{
+#map_1_text_container{
     position: absolute;
     top: 955px;
     left: 545px;
     z-index: 100;
 }
 
-#map_3_text_container{
+#map_2_text_container{
     position: absolute;
     top: 955px;
     left: 885px;
     z-index: 100;
 }
 
-#map_4_text_container{
+#map_3_text_container{
     position: absolute;
     top: 955px;
     left: 1225px;
     z-index: 100;
 }
 
-#map_5_text_container{
+#map_4_text_container{
     position: absolute;
     top: 955px;
     left: 1565px;
@@ -79,8 +84,13 @@
 }
 
 h1.map_text{
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: BuzzCity;
     color: #ffffff;
-    font-size: 90px;
-    text-align: center;
+    font-size: 50px;
+    position: relative;
+    right: 55px;
+    width: 260px;
+    padding-top: 15px;
+    text-transform: lowercase;
+    line-height: 80%;
 }
