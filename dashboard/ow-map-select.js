@@ -3,12 +3,7 @@ const blue_team = nodecg.Replicant('blue_team');
 const red_team = nodecg.Replicant('red_team');
 const game_info = nodecg.Replicant('game_info');
 
-nodecg.readReplicant('game_info', value => {
-    console.log(value);
-});
-
 game_info.on('change', (value) => {
-    console.log(value.games);
     value.games.forEach(game => {
         if(game.map != 'tbd'){
             $(`#active_map_${game.id}`).html(`<div class="card small active_map"><div class="card-content"><h5>Game ${game.id+1}:<br>${game.map}</h5></div></div>`)
@@ -43,7 +38,6 @@ function setActiveMap(id, name, image, game_num){
     game_info.value.games[game_num].map_id = id;
     game_info.value.games[game_num].map = name;
     game_info.value.games[game_num].map_image = image;
-    console.log(game_info.value);
 }
 
 setInterval(function () {getMaps();}, 2000);

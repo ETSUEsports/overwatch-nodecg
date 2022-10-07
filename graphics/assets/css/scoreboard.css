@@ -61,37 +61,38 @@
 }
 .team_score{
     line-height: 45px;
+    background-color: #ffffff;
+    color: #000000;
+    width: 45px;
 }
 h1.team_name[data-team="blue_team"] {
     position: absolute;
-    left: 220px;
+    left: 190px;
     text-align: right !important;
 }
 h1.team_name[data-team="red_team"] {
     position: absolute;
-    right: 220px;
+    right: 190px;
     text-align: left !important;
 }
 h1.team_score[data-team="blue_team"] {
     position: absolute;
-    right: 60px;
+    right: 45px;
     transition: all 0.5s linear;
 }
 h1.team_score[data-team="blue_team"][data-mode="hidden"] {
     position: absolute;
-    right: 48px !important;
+    right: 0px !important;
     transition: all 0.5s linear;
 }
 h1.team_score[data-team="red_team"] {
     position: absolute;
-    left: 60px;
-    text-align: right !important;
+    left: 45px;
     transition: all 0.5s linear;
 }
 h1.team_score[data-team="red_team"][data-mode="hidden"] {
     position: absolute;
-    left: 48px !important;
-    text-align: right !important;
+    left: 0px !important;
     transition: all 0.5s linear;
 }
 /* Team Attack or Defend */
@@ -100,23 +101,25 @@ h1.team_score[data-team="red_team"][data-mode="hidden"] {
     width: 45px;
     height: 45px;
     position: absolute;
-    left: 520px;
+    left: 523px;
+    background-color: #000000;
 }
 .team_attack_defend[data-team="red_team"] {
     width: 45px;
     height: 45px;
     position: absolute;
-    right: 520px;
+    right: 523px;
+    background-color: #000000;
 }
 .team_attack_defend[data-mode="attack"]{
     background-image: url(../img/attack.png) !important;
     background-repeat: no-repeat;
     background-size: 35px 35px;
-    background-position: center;
+    background-position: center center;
 }
 .team_attack_defend[data-mode="defend"]{
     background-image: url(../img/defend.png) !important;
     background-repeat: no-repeat;
     background-size: 35px 35px;
-    background-position: center;
+    background-position: center center;
 }
