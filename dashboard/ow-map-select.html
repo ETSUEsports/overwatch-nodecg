@@ -13,7 +13,7 @@
             --ow-primary-red: #DA2623;
             font-variant-numeric: tabular-nums;
         }
-		.team {
+		.map {
 			padding: 5px;
 			margin-top: 10px;
 		}
@@ -54,13 +54,6 @@
         .card-action, .card-image{
             background-color: #232C3D !important;
         }
-        .team-blue{
-            background-color: var(--ow-primary-blue) !important;
-            color: #000000;
-        }
-        .team-red{
-            background-color: var(--ow-primary-red) !important;
-        }
         .active-blue{
             background-color: var(--ow-primary-blue) !important;
             color: #000000;
@@ -93,29 +86,33 @@
 <body>
 	<div class="container">
         <div class="row text-center">
-			<div class="col s6 team">
-                <h4>Blue Team</h4>
-                <div id="active_blue_team">
-
-                </div>
-			</div>
-			<div class="col s6 team">
-                <h4>Red Team</h4>
-                <div id="active_red_team">
+			<div class="col s6 map">
+                <h4>Active Map</h4>
+                <div id="active_map">
 
                 </div>
 			</div>
         </div>
-            <h5>Team Library</h5>
+            <h3>Map Library</h3>
         <div class="row text-center">
-            <div id="team_cards" class="col s12 cards-container"></div>
+            <h4>Control</h4>
+            <div id="control_map_cards" class="col s12 cards-container"></div>
         <div>
-        <div class="row">
-            <button class="btn waves-effect waves-light" id="add_team_btn" nodecg-dialog="ow_new_team" name="action">Add Team<i class="material-icons right">add</i></button>
-        </div>
+        <div class="row text-center">
+            <h4>Hybrid</h4>
+            <div id="hybrid_map_cards" class="col s12 cards-container"></div>
+        <div>
+        <div class="row text-center">
+            <h4>Escort</h4>
+            <div id="escort_map_cards" class="col s12 cards-container"></div>
+        <div>
+        <div class="row text-center">
+            <h4>Push</h4>
+            <div id="push_map_cards" class="col s12 cards-container"></div>
+        <div>
 	</div>
 	<script src="jquery-3.6.0.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-	<script src="ow-teams.js"></script>
+	<script src="ow-map-select.js"></script>
 </body>
 </html>

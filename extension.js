@@ -146,5 +146,9 @@ module.exports = function (nodecg) {
 			res.send('Deleted Team');
 		});
 	})
+	router.get('/maps', (req, res) => {
+		const jsonFile = fs.createReadStream('./bundles/overwatch-nodecg/graphics/assets/img/maps/maps.json');
+		jsonFile.pipe(res);
+	})
     nodecg.mount('/etsu-ow', router);
 };

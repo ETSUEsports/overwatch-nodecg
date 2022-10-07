@@ -22,7 +22,7 @@
     "compatibleRange": "^1.1.1",
     "dashboardPanels": [
       {
-        "name": "Overwatch Home",
+        "name": "ow_home",
         "title": "Overwatch Home",
         "width": 4,
         "file": "ow-home.html",
@@ -30,7 +30,7 @@
         "workspace": "Overwatch"
       },
       {
-        "name": "Overwatch Teams",
+        "name": "ow_teams",
         "title": "Overwatch Teams",
         "width": 6,
         "file": "ow-teams.html",
@@ -38,7 +38,15 @@
         "workspace": "Overwatch"
       },
       {
-        "name": "new-team",
+        "name": "ow_maps",
+        "title": "Overwatch Map Selection",
+        "width": 6,
+        "file": "ow-map-select.html",
+        "headerColor": "#525F78",
+        "workspace": "Overwatch"
+      },
+      {
+        "name": "ow_new_team",
         "title": "New Team",
         "width": 3,
         "dialog": true,
@@ -58,6 +66,16 @@
     "graphics": [
       {
         "file": "index.html",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "file": "vs.html",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "file": "map_selection.html",
         "width": 1920,
         "height": 1080
       }

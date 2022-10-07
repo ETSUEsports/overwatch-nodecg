@@ -1,0 +1,86 @@
+.map_image{
+    width: 333px;
+    height: 791px;
+}
+
+#bg_image{
+    position: relative;
+    z-index: 50;
+}
+
+#map_1_container{
+    position: absolute;
+    top: 216px;
+    left: 114px;
+    z-index: 1;
+}
+
+#map_2_container{
+    position: absolute;
+    top: 216px;
+    left: 454px;
+    z-index: 1;
+}
+
+#map_3_container{
+    position: absolute;
+    top: 216px;
+    left: 794px;
+    z-index: 1;
+}
+
+#map_4_container{
+    position: absolute;
+    top: 216px;
+    left: 1134px;
+    z-index: 1;
+}
+
+#map_5_container{
+    position: absolute;
+    top: 216px;
+    left: 1474px;
+    z-index: 1;
+}
+
+#map_1_text_container{
+    position: absolute;
+    top: 955px;
+    left: 205px;
+    z-index: 100;
+}
+
+#map_2_text_container{
+    position: absolute;
+    top: 955px;
+    left: 545px;
+    z-index: 100;
+}
+
+#map_3_text_container{
+    position: absolute;
+    top: 955px;
+    left: 885px;
+    z-index: 100;
+}
+
+#map_4_text_container{
+    position: absolute;
+    top: 955px;
+    left: 1225px;
+    z-index: 100;
+}
+
+#map_5_text_container{
+    position: absolute;
+    top: 955px;
+    left: 1565px;
+    z-index: 100;
+}
+
+h1.map_text{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #ffffff;
+    font-size: 90px;
+    text-align: center;
+}

@@ -1,0 +1,110 @@
+{
+    "escort": [
+        {
+            "id": "circuit_royal",
+            "name": "Circuit Royal",
+            "image": "CIRCUIT_ROYAL.png"
+        },
+        {
+            "id": "dorado",
+            "name": "Dorado",
+            "image": "DORADO.png"
+        },
+        {
+            "id": "havana",
+            "name": "Havana",
+            "image": "HAVANA.png"
+        },
+        {
+            "id": "junkertown",
+            "name": "Junkertown",
+            "image": "JUNKERTOWN.png"
+        },
+        {
+            "id": "rialto",
+            "name": "Rialto",
+            "image": "RIALTO.png"
+        },
+        {
+            "id": "rt_66",
+            "name": "Route 66",
+            "image": "RT_66.png"
+        }
+    ],
+    "hybrid": [
+        {
+            "id": "blizzard_world",
+            "name": "Blizzard World",
+            "image": "BLIZZARD_WRLD.png"
+        },
+        {
+            "id": "eichenwalde",
+            "name": "Eichenwalde",
+            "image": "EICHENWALDE.png"
+        },
+        {
+            "id": "hollywood",
+            "name": "Hollywood",
+            "image": "HOLLYWOOD.png"
+        },
+        {
+            "id": "kings_row",
+            "name": "King's Row",
+            "image": "KINGS_ROW.png"
+        },
+        {
+            "id": "midtown",
+            "name": "Midtown",
+            "image": "MIDTOWN.png"
+        },
+        {
+            "id": "paraiso",
+            "name": "Paraíso",
+            "image": "PARAISO.png"
+        }
+    ],
+    "control": [
+        {
+            "id": "busan",
+            "name": "Busan",
+            "image": "BUSAN.png"
+        },
+        {
+            "id": "ilios",
+            "name": "Ilios",
+            "image": "ILIOS.png"
+        },
+        {
+            "id": "lijiang_tower",
+            "name": "Lijiang Tower",
+            "image": "LIJIANG_TOWER.png"
+        },
+        {
+            "id": "nepal",
+            "name": "Nepal",
+            "image": "NEPAL.png"
+        },
+        {
+            "id": "oasis",
+            "name": "Oasis",
+            "image": "OASIS.png"
+        }
+    ],
+    "push": [
+        {
+            "id": "colosseo",
+            "name": "Colosseo",
+            "image": "COLOSSEO.png"
+        },
+        {
+            "id": "esperanca",
+            "name": "Esperança",
+            "image": "ESPERANCA.png"
+        },
+        {
+            "id": "new_queen_st",
+            "name": "New Queen Street",
+            "image": "NEW_QUEEN_ST.png"
+        }
+    ]
+}
