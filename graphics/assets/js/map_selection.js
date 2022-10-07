@@ -6,7 +6,7 @@ game_info.on('change', (value) => {
             $(`#map_${game.id}_image`).attr("src", `./assets/img/maps/${game.mode}/${game.map_image}`);
             $(`#map_${game.id}_text`).html(`${game.map}`);
         }else{
-            $(`#active_map_${game.id}`).attr("src", "./assets/img/maps/tbd.png");
+            $(`#map_${game.id}_image`).attr("src", "./assets/img/maps/tbd.png");
             $(`#map_${game.id}_text`).html("TBD");
         }
     });
