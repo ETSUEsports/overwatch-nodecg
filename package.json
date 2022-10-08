@@ -1,12 +1,12 @@
 {
   "name": "overwatch-nodecg",
-  "version": "0.0.0",
+  "version": "0.1.3",
   "description": "",
   "homepage": "",
   "author": {
     "name": "Russell Payne",
     "email": "payner3@etsu.edu",
-    "url": ""
+    "url": "https://portfolio.ryois.me"
   },
   "files": [
     "dashboard",
