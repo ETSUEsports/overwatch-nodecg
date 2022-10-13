@@ -78,11 +78,22 @@
         #active_blue_team > div.card-content > p {
             color: #000000;
         }
-        .btn,.btn-large,.btn-small,.btn-flat {
+        /*.btn,.btn-large,.btn-small,.btn-flat {
             padding: 0 9px 0 9px !important;
-        }
+        }*/
         .active_map{
-            height: 100px !important;
+            height: 140px !important;
+        }
+
+        .game_status_win{
+            background-color: rgb(0, 128, 0) !important;
+        }
+        .game_status_loss{
+            background-color: rgb(255, 0, 0) !important;
+        }
+
+        .action_btn_small{
+            padding: 0 5px 0 5px !important;
         }
 	</style>
 </head>
@@ -125,6 +136,8 @@
             <h4>Push</h4>
             <div id="push_map_cards" class="col s12 cards-container"></div>
         <div>
+            <button class="btn waves-effect waves-light red" onclick="resetMaps()"><i class="material-icons left">delete</i>Reset Maps</button>
+
 	</div>
 	<script src="jquery-3.6.0.min.js"></script>
 	<script src="./materialize.min.js"></script>

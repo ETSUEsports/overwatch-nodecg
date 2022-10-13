@@ -24,3 +24,8 @@
     /*background-image: url("../img/OW_Sketch.png");*/
     background-repeat: no-repeat;
 }
+
+body{
+    background-color: rgba(0,0,0,0);
+    overflow: hidden;
+}

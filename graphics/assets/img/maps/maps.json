@@ -11,19 +11,9 @@
             "image": "DORADO.png"
         },
         {
-            "id": "havana",
-            "name": "Havana",
-            "image": "HAVANA.png"
-        },
-        {
             "id": "junkertown",
             "name": "Junkertown",
             "image": "JUNKERTOWN.png"
-        },
-        {
-            "id": "rialto",
-            "name": "Rialto",
-            "image": "RIALTO.png"
         },
         {
             "id": "rt_66",
@@ -33,29 +23,14 @@
     ],
     "hybrid": [
         {
-            "id": "blizzard_world",
-            "name": "Blizzard World",
-            "image": "BLIZZARD_WRLD.png"
-        },
-        {
             "id": "eichenwalde",
             "name": "Eichenwalde",
             "image": "EICHENWALDE.png"
         },
         {
-            "id": "hollywood",
-            "name": "Hollywood",
-            "image": "HOLLYWOOD.png"
-        },
-        {
             "id": "kings_row",
             "name": "King's Row",
             "image": "KINGS_ROW.png"
-        },
-        {
-            "id": "midtown",
-            "name": "Midtown",
-            "image": "MIDTOWN.png"
         },
         {
             "id": "paraiso",

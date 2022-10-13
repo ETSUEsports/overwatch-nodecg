@@ -139,7 +139,7 @@ module.exports = function (nodecg) {
 				return console.log(error.message);
 			}
 			try {
-				fs.unlinkSync(`./assets/overwatch-nodecg/team_logos/${req.params.name}`);
+				fs.unlinkSync(`./assets/overwatch-nodecg/team_logos/${req.params.name}.png`);
 			  } catch(err) {
 				console.error(err)
 			  }

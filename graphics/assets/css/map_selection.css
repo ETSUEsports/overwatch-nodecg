@@ -83,14 +83,23 @@
     z-index: 100;
 }
 
-h1.map_text{
+h1.map_num{
     font-family: BuzzCity;
     color: #ffffff;
     font-size: 50px;
     position: relative;
-    right: 55px;
-    width: 260px;
-    padding-top: 15px;
+    bottom: 30px;
     text-transform: lowercase;
-    line-height: 80%;
+    text-align: center;
+}
+
+
+.map_win {
+    outline: 200px solid rgba(0, 128, 0, 0.3) !important;
+    outline-offset: -150px;
+}
+
+.map_loss{
+    outline: 200px solid rgba(255, 0, 0, 0.3) !important;
+    outline-offset: -150px;
 }

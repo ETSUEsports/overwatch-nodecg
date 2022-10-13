@@ -179,6 +179,7 @@ red_team.on('change', (newVal) => {
     $('#red_team_logo_preview').attr('src', `/assets/overwatch-nodecg/team_logos/${newVal.logo_file_name}`);
 })
 game_info.on('change', (newVal) => {
+    console.log(newVal.games);
     if(newVal.attacking_team == "blue"){
         $("#attacking_team").prop('checked', false);
     }else{
