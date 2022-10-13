@@ -46,12 +46,12 @@ function resetMaps(){
         for(let i = 0; i < 5; i++){
             game_info.value.games[i].map_id = "tbd";
             game_info.value.games[i].map = "tbd";
-            game_info.value.games[i].map_image = "tbd";
+            game_info.value.games[i].map_image = null;
             game_info.value.games[i].status = "tbd";
             game_info.value.games[i].blue_team = "tbd";
             game_info.value.games[i].red_team = "tbd";
-            game_info.value.games[i].blue_score = "tbd";
-            game_info.value.games[i].red_score = "tbd";
+            game_info.value.games[i].blue_score = 0;
+            game_info.value.games[i].red_score = 0;
         }
     }
 
