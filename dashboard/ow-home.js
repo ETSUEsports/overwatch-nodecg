@@ -86,7 +86,12 @@ function update() {
             "maximum": game_info.value.maximum,
             "ad_mode": ad_mode,
             "attacking_team": attacking_team,
-            "overlay_visible": game_info.value.overlay_visible
+            "overlay_visible": game_info.value.overlay_visible,
+            "blue_team": game_info.value.blue_team,
+            "red_team": game_info.value.red_team,
+            "current_game": game_info.value.current_game,
+            "active_map": game_info.value.active_map,
+            "games": game_info.value.games
         };
     }else{
         game_info.value.overlay_visible = true;

@@ -17,19 +17,19 @@ function getMaps(){
     $.getJSON("/etsu-ow/maps", function(result){
         $('#control_map_cards').html("");
         $.each(result.control, function(i, field){
-            $('#control_map_cards').append(`<div class="card small"><div class="card-content"><h5>${field.name}</h5></div><div class="card-action"><a class="waves-effect waves-light btn-small" onclick="setActiveMap('${field.id}', '${field.name}', '${field.image}', 0)">Map 1</a> <a class="waves-effect waves-light btn-small" onclick="setActiveMap('${field.id}', '${field.name}', '${field.image}', 4)">Map 5</a></div></div>`);
+            $('#control_map_cards').append(`<div class="card small"><div class="card-content"><h5>${field.name}</h5></div><div class="card-action"><a class="waves-effect waves-light btn-small" onclick="setActiveMap('${field.id}', '${escape(field.name)}', '${field.image}', 0)">Map 1</a> <a class="waves-effect waves-light btn-small" onclick="setActiveMap('${field.id}', '${escape(field.name)}', '${field.image}', 4)">Map 5</a></div></div>`);
         });
         $('#hybrid_map_cards').html("");
         $.each(result.hybrid, function(i, field){
-            $('#hybrid_map_cards').append(`<div class="card small"><div class="card-content"><h5>${field.name}</h5></div><div class="card-action"><a class="waves-effect waves-light btn-small" onclick="setActiveMap('${field.id}', '${field.name}', '${field.image}', 1)">Map 2</a></div></div>`);
+            $('#hybrid_map_cards').append(`<div class="card small"><div class="card-content"><h5>${field.name}</h5></div><div class="card-action"><a class="waves-effect waves-light btn-small" onclick="setActiveMap('${field.id}', '${escape(field.name)}', '${field.image}', 1)">Map 2</a></div></div>`);
         });
         $('#escort_map_cards').html("");
         $.each(result.escort, function(i, field){
-            $('#escort_map_cards').append(`<div class="card small"><div class="card-content"><h5>${field.name}</h5></div><div class="card-action"><a class="waves-effect waves-light btn-small" onclick="setActiveMap('${field.id}', '${field.name}', '${field.image}', 2)">Map 3</a></div></div>`);
+            $('#escort_map_cards').append(`<div class="card small"><div class="card-content"><h5>${field.name}</h5></div><div class="card-action"><a class="waves-effect waves-light btn-small" onclick="setActiveMap('${field.id}', '${escape(field.name)}', '${field.image}', 2)">Map 3</a></div></div>`);
         });
         $('#push_map_cards').html("");
         $.each(result.push, function(i, field){
-            $('#push_map_cards').append(`<div class="card small"><div class="card-content"><h5>${field.name}</h5></div><div class="card-action"><a class="waves-effect waves-light btn-small" onclick="setActiveMap('${field.id}', '${field.name}', '${field.image}', 3)">Map 4</a></div></div>`);
+            $('#push_map_cards').append(`<div class="card small"><div class="card-content"><h5>${field.name}</h5></div><div class="card-action"><a class="waves-effect waves-light btn-small" onclick="setActiveMap('${field.id}', '${escape(field.name)}', '${field.image}', 3)">Map 4</a></div></div>`);
         });
     });
 }
