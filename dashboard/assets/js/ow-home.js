@@ -126,16 +126,26 @@ function hide() {
     $("#hide_button").addClass("disabled");
     $("#update_button").html("Show");
 }
-nodecg.readReplicant('blue_team', value => {
-    $("#blue_team_name").val(value.name);
-    $("#blue_team_score").val(value.score);
-    $('#blue_team_logo_preview').attr('src', value.logo_path);
+nodecg.readReplicant('blue_team', newVal => {
+    console.log(newVal);
+    $("#blue_team_name").val(newVal.name);
+    $("#blue_team_score").val(newVal.score);
+    $('#blue_team_logo_preview').attr('src', `/assets/overwatch-nodecg/team_logos/${newVal.logo_file_name}`);
+    console.log(newVal.logo_file_name);
+    $(`#blue_team_logo option[value="${newVal.logo_file_name}"]`).attr('selected', 'selected');
+    const blue_team_logo = document.getElementById('blue_team_logo');
+    M.FormSelect.init(blue_team_logo)
     M.updateTextFields();
 });
-nodecg.readReplicant('red_team', value => {
-    $("#red_team_name").val(value.name);
-    $("#red_team_score").val(value.score);
-    $('#red_team_logo_preview').attr('src', value.logo_path);
+nodecg.readReplicant('red_team', newVal => {
+    console.log(newVal);
+    $("#red_team_name").val(newVal.name);
+    $("#red_team_score").val(newVal.score);
+    $('#red_team_logo_preview').attr('src', `/assets/overwatch-nodecg/team_logos/${newVal.logo_file_name}`);
+    console.log(newVal.logo_file_name);
+    $(`#red_team_logo option[value="${newVal.logo_file_name}"]`).attr('selected', 'selected');
+    const red_team_logo = document.getElementById('red_team_logo');
+    M.FormSelect.init(red_team_logo)
     M.updateTextFields();
 });
 nodecg.readReplicant('assets:team_logos', value => {
@@ -174,14 +184,26 @@ $('#red_team_logo').on('change', function() {
 });
 
 blue_team.on('change', (newVal) => {
+    console.log(newVal);
     $("#blue_team_name").val(newVal.name);
     $("#blue_team_score").val(newVal.score);
     $('#blue_team_logo_preview').attr('src', `/assets/overwatch-nodecg/team_logos/${newVal.logo_file_name}`);
+    console.log(newVal.logo_file_name);
+    $(`#blue_team_logo option[value="${newVal.logo_file_name}"]`).attr('selected', 'selected');
+    const blue_team_logo = document.getElementById('blue_team_logo');
+    M.FormSelect.init(blue_team_logo)
+    M.updateTextFields();
 })
 red_team.on('change', (newVal) => {
+    console.log(newVal);
     $("#red_team_name").val(newVal.name);
     $("#red_team_score").val(newVal.score);
     $('#red_team_logo_preview').attr('src', `/assets/overwatch-nodecg/team_logos/${newVal.logo_file_name}`);
+    console.log(newVal.logo_file_name);
+    $(`#red_team_logo option[value="${newVal.logo_file_name}"]`).attr('selected', 'selected');
+    const red_team_logo = document.getElementById('red_team_logo');
+    M.FormSelect.init(red_team_logo)
+    M.updateTextFields();
 })
 game_info.on('change', (newVal) => {
     console.log(newVal.games);
