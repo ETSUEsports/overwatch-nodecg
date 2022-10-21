@@ -36,6 +36,11 @@
             "id": "paraiso",
             "name": "Paraíso",
             "image": "PARAISO.png"
+        },
+        {
+            "id": "hollywood",
+            "name": "Hollywood",
+            "image": "HOLLYWOOD.png"
         }
     ],
     "control": [
