@@ -26,6 +26,7 @@ const game_info = nodecg.Replicant('game_info', {defaultValue: {
         {"id": 4, "map": "tbd", "map_image": null, "mode": "control", "status": "tbd", "blue_team": "tbd", "red_team": "tbd", "blue_score": 0, "red_score": 0},
     ]
 }});
+const ad_settings = nodecg.Replicant('ad_settings', {defaultValue: {"visible": true}});
 const logos = nodecg.Replicant('assets:team_logos');
 function resetStats(){
     visible = game_info.value.overlay_visible;

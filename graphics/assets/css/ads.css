@@ -1,0 +1,43 @@
+#ads_container{
+    background-image: url("../img/OW_ADs.png");
+    width: 1920px;
+    height: 1080px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.ads_hidden {
+    visibility: hidden !important;
+}
+
+#ads_loop{
+    width: 180px;
+    height: 50px;
+    overflow: hidden;
+    position: absolute;
+    bottom: 23px;
+    left: 585px;
+}
+
+img.ads {
+    width: 180px;
+    height: 50px;
+}
+
+#ads_list{
+    position: relative;
+    list-style: none;
+    height: 100%;
+    width: 10000%;
+    padding: 0;
+    margin: 0;
+    /*transition: all 750ms ease;*/
+    left: 0;
+}
+
+.ads_item {
+    position: relative;
+    height: 100%;
+    float: left;
+}

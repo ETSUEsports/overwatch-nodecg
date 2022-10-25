@@ -90,6 +90,11 @@
           "gif",
           "png"
         ]
+      },
+      {
+        "name": "ads",
+        "title": "Ads (270px x 75px)",
+        "allowedTypes": ["png"]
       }
     ]
   },
